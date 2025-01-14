@@ -8,7 +8,7 @@ const LandingLayout = ({ children }: LandingLayoutProps) => {
   return (
     <>
       <NavigationBar />
-      <main className="container pt-12">{children}</main>
+      <main className="mt-12">{children}</main>
     </>
   );
 };
