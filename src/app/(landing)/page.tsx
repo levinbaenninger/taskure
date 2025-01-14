@@ -14,9 +14,9 @@ const LandingPage = () => {
         alt="Image showcasing the app"
         width={1598}
         height={512}
-        className="pt-12"
+        className="mt-12"
       />
-      <p className="mt-4 max-w-sm text-center text-xl font-light md:max-w-xl lg:max-w-2xl">
+      <p className="mt-8 max-w-sm text-center text-xl font-light md:max-w-xl lg:max-w-2xl">
         Join the ranks of successful teams who have already unlocked their full
         potential with Taskure. Sign up today and experience the future of
         collaborative task management for yourself!
