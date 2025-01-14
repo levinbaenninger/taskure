@@ -2,6 +2,8 @@ import "~/styles/globals.css";
 
 import { type Metadata } from "next";
 
+import { ClerkProvider } from "@clerk/nextjs";
+import { dark } from "@clerk/themes";
 import { ThemeProvider } from "~/components/theme-provider";
 import { recursive } from "~/fonts";
 import { TRPCReactProvider } from "~/trpc/react";
@@ -17,23 +19,29 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="en"
-      className={`${recursive.variable}`}
-      suppressHydrationWarning
+    <ClerkProvider
+      appearance={{
+        baseTheme: dark,
+      }}
     >
-      <body className="min-h-screen">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <TRPCReactProvider>
-            <div className="container mx-auto">{children}</div>
-          </TRPCReactProvider>
-        </ThemeProvider>
-      </body>
-    </html>
+      <html
+        lang="en"
+        className={`${recursive.variable}`}
+        suppressHydrationWarning
+      >
+        <body className="min-h-screen">
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <TRPCReactProvider>
+              <div className="container mx-auto">{children}</div>
+            </TRPCReactProvider>
+          </ThemeProvider>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
