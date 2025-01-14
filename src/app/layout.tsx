@@ -22,14 +22,16 @@ export default function RootLayout({
       className={`${recursive.variable}`}
       suppressHydrationWarning
     >
-      <body>
+      <body className="min-h-screen">
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
-          <TRPCReactProvider>{children}</TRPCReactProvider>
+          <TRPCReactProvider>
+            <div className="container mx-auto">{children}</div>
+          </TRPCReactProvider>
         </ThemeProvider>
       </body>
     </html>
